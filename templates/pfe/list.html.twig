@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <style>
+        #c {
+            margin: 0.2%;
+        }
+    </style>
+    <div class="container row">
+        {% for entreprise in entreprises %}
+            {% if loop.index%2 ==0%}
+            <div class="card w-25 col-auto text-white" id="c" style="background-color: #f8d7da">
+                <div class="card-body">
+                    <h5 class="card-title">{{ entreprise.designation }}</h5>
+                    <p class="card-text">{{entreprise.pfeCollection|length}} PFE(s)</p>
+                </div>
+            </div>
+            {%else%}
+                <div class="card w-25 col-auto text-black" id="c" style="background-color:#dfc2c4 ">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ entreprise.designation }}</h5>
+                        <p class="card-text">{{entreprise.pfeCollection|length}} PFE(s)</p>
+                    </div>
+                </div>
+            {%endif%}
+        {% endfor %}
+    </div>
+    <br>
+    <a href="{{path('add_pfe')}}" class="btn btn-dark">Add PFE</a>
+
+{% endblock %}
+

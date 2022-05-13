@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <style>
+        #nada {
+            margin-left : 30%;
+            margin-top : 7%;
+            background-color: #f8d7da;
+        }
+    </style>
+    <div class="card" style="width: 25rem;" id="nada">
+        <div class="card-body">
+            <h5 class="card-title">titre : {{pfe.titre}}</h5>
+            <br>
+            <p class="card-text">nom étudiant : {{pfe.nomEtudiant}}</p>
+            <p class="card-text">ENTREPRISE : {{pfe.entreprise}}</p>
+            <a href="{{ path('list_pfes') }}" class="btn  btn-light" >liste des entreprises</a>
+        </div>
+    </div>
+{% endblock %}
+
